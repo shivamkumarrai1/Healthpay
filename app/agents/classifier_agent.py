@@ -19,10 +19,8 @@ Content:
 
     response = ask_gpt(prompt).strip().lower()
 
-    # ✅ Add this log to see raw classification output in terminal
     print(f"📄 Classifier response from LLM: {response}")
 
-    # ✅ Sanitize output
     allowed = {"bill", "discharge_summary", "id_card"}
     if response in allowed:
         return response
