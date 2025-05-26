@@ -2,6 +2,9 @@
 
 A FastAPI-based backend pipeline that processes medical claim PDFs using LLMs and agentic workflows.
 
+## 🎥 Demo Video:
+Watch the working Demo:[https://www.loom.com/share/65b13027910541cfaddff39872a21405?sid=43f44f56-2d95-4398-8f17-fa53a050b544]
+
 ## 🔧 Architecture
 
 - **FastAPI**: Main API server
@@ -76,3 +79,30 @@ healthpay-backend/
 ├── Dockerfile                 # Docker container configuration
 ├── README.md                  # Project documentation
 └── .dockerignore              # Files to exclude from Docker image
+
+
+
+## 🐳 Docker Setup (Run Locally)
+
+You can build and run this FastAPI app using Docker:
+
+### 1. Clone the Repository
+
+```bash
+1.git clone https://github.com/shivamkumarrai1/healthpay-backend.git
+cd healthpay-backend
+
+2. Build the Docker Image
+docker build -t healthpay-app.
+
+3. Run the Container
+docker run -p 8000:8000 healthpay-app
+Then open in your browser: 
+http://localhost:8000/docs
+(Or http://192.168.99.100:8000/docs if using Docker Toolbox)
+
+📁 .env Configuration
+Create a .env file or copy from .env.example with your LLM key:
+
+OPENROUTER_API_KEY=your_api_key_here
+OPENROUTER_MODEL=openai/gpt-3.5-turbo
